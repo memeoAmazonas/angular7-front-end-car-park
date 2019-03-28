@@ -1,0 +1,9 @@
+<div style="text-align:center">
+ <!-- <app-error404></app-error404>  -->
+  <app-header></app-header>
+  <app-banner></app-banner>
+  <app-car-park *ngIf="router.url == '/'"></app-car-park>
+<router-outlet></router-outlet>
+  <app-footer></app-footer>
+ 
+</div>

@@ -1,0 +1,13 @@
+
+<div class="carlist-container">
+<hr />
+<h1 class="carlist-title">{{title}}</h1>
+<div *ngIf="carList" class="container carlist-content">
+  <div class="row carlist-content-content">
+    <div  *ngFor="let car of carList">
+      <app-car [car]="car" [isEmpty]="car.empty"></app-car>
+    </div>
+  </div>
+</div>
+
+</div>

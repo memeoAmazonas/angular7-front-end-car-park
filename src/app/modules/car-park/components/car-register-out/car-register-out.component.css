@@ -1,0 +1,13 @@
+.register-out-container {
+  align-items: center;
+  display: flex;
+}
+
+.register-out-label {
+  margin-right: 100px;
+}
+
+.register-out-btn {
+  display: flex;
+  margin: 15px 0 0 15px;
+}

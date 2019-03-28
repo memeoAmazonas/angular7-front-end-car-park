@@ -1,0 +1,23 @@
+.car-park-container {
+  background: #e2eef7;
+  padding: 0;
+}
+
+.car-park-register-car-container {
+  align-items: center;
+  display: flex;
+}
+
+.car-park-register-car-register {
+  margin: 20px 0 0 100px
+}
+
+.car-park-create-position {
+  display: flex;
+  margin: 0 auto 120px auto
+}
+
+.input-create-position {
+  margin-right: 10px;
+  width: 190px;
+}

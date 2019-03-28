@@ -1,0 +1,59 @@
+<div class=" container car-park-container" style="text-align: left">
+  <h1>
+    {{administrate}}
+  </h1>
+  <div class="row" style="margin-top: 50px">
+    <div *ngIf="cont < 1">
+      <h2>
+        {{createCarPark}}
+      </h2>
+      <div class="container" style="display: flex; align-items: center;">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()"  class="car-park-create-position">
+          <div class="form-group">
+            <input
+                    type="number"
+                    class="form-control input-create-position"
+                    formControlName="position"
+                    [ngClass]="{ 'is-invalid': submitted && f.position.errors }" [(placeholder)]=placeholder />
+            <div *ngIf="submitted && f.position.errors" class="invalid-feedback">
+              <div *ngIf="f.position.errors.required">{{required}}</div>
+              <div *ngIf="f.position.errors.min">{{minNumber}}</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-success" > {{createCarPark}}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="(cont > 0)">
+    <div  style="text-align: left">
+      <h2 style="margin-left: 12px">
+        {{deleteParkingCar}}
+      </h2>
+      <div class="container">
+        <button style="margin-bottom: 45px" class="btn btn-success" (click)="deleteParking()">{{deleteParkingCar}}</button>
+        <div class="modal fade" id= "idModalAdmin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{labels.title}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                {{labels.body}}
+              </div>
+              <div class="modal-footer" style="justify-content: center">
+                <button type="button" class="btn btn-primary" (click)="accept()">{{labels.accept}}</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">{{labels.canceled}}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

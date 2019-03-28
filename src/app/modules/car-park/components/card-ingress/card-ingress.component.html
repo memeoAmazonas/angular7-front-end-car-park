@@ -1,0 +1,9 @@
+<div class="card">
+  <img class="card-img-top" src="../../../../../assets/images/card-register-car.jpeg" alt="Card image cap">
+  <div class="card-body" style="text-align: left" *ngIf="car">
+    <p class="card-text">{{labels.registerCarConfirm}}</p>
+    <h5 class="card-title">{{labels.licencePlate}}: <span>{{car.id}}</span></h5>
+    <h5 class="card-title">{{labels.model}}: <span>{{car.model}}</span> </h5>
+    <h5 class="card-title">{{labels.ingress}}: <span>{{car.dateIngress | date:'dd/MM/yyyy : HH:mm'}}</span>   </h5>
+  </div>
+</div>

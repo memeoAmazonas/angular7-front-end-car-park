@@ -1,0 +1,15 @@
+<div class="contact-message" *ngIf="car">
+  <div class="card invoice-card-container">
+    <div class="card-body invoice-card-body">
+      <h5 class="card-text">{{labels.content}}</h5>
+      <h5><span class="card-subtitle mb-2 text-muted">{{ labels.position }}: {{car.position + 1}}</span></h5>
+      <h5> <span class="card-subtitle mb-2 text-muted">{{ labels.id }}: {{car.id}}</span></h5>
+      <h5> <span class="card-subtitle mb-2 text-muted">{{ labels.model }}: {{car.model}}</span></h5>
+      <h5> <span class="card-subtitle mb-2 text-muted">{{ labels.dateIngress }}: {{car.dateIngress | date: 'dd/MM/yyyy - HH:mm' }}</span></h5>
+      <h5> <span class="card-subtitle mb-2 text-muted">{{ labels.outDate }}: {{generateExit() | date: 'dd/MM/yyyy - HH:mm' }}</span></h5>
+      <h5> <span class="card-subtitle mb-2 text-muted" *ngIf="generateInvoice()">{{ labels.totalAccount }}: {{ generateInvoice() }}</span></h5>
+    </div>
+  </div>
+</div>
+
+

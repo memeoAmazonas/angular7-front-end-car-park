@@ -1,0 +1,17 @@
+
+<div class="col-md-4"  *ngIf="car">
+  <div  *ngIf="!isEmpty" class="car-box">
+    <h3>{{labels.position}}: <span style="font-size: 20px">{{ car.id_table + 1}}</span></h3>
+    <h3>{{labels.entry}}: <span>{{car.dateIngress | date:'dd/MM/yyyy hh:mm'}}</span></h3>
+    <h3>{{labels.licencePlate}}: <span>{{car.id }}</span> </h3>
+    <h3>{{labels.model}}: <span>{{car.model}}</span> </h3>
+    <app-car-modal [id]="car.id_table" [show]="true" [car]="car"></app-car-modal>
+  </div>
+  <div *ngIf="isEmpty" class="car-box-empty">
+    <br>
+    <h3>{{labels.position}} </h3>
+    <h3> {{car.id_table + 1 }}</h3>
+    <br>
+    <h3>{{labels.isEmpty}}</h3>
+  </div>
+</div>

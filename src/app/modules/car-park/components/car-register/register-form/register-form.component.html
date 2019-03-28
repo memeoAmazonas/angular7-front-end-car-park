@@ -1,0 +1,35 @@
+<div class="modal fade" id="registerCar" tabindex="-1" role="dialog" aria-labelledby="registerCarLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registerCarLabel">{{labels.title}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit('registerCar')" >
+          <div class="form-group">
+            <label>{{labels.licencePlate}}</label>
+            <input type="text" formControlName="licencePlate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.licencePlate.errors }" />
+            <div *ngIf="submitted && f.licencePlate.errors" class="invalid-feedback">
+              <div *ngIf="f.licencePlate.errors.required">{{labels.licencePlate + labels.require}}</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>{{labels.model}}</label>
+            <input type="text" formControlName="model" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.model.errors }" />
+            <div *ngIf="submitted && f.model.errors" class="invalid-feedback">
+              <div *ngIf="f.model.errors.required">{{labels.model + labels.require}}</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button [disabled]="(submitted && f.model.errors || submitted && f.licencePlate.errors)" class="btn btn-primary form-btn">{{labels.register}}</button>
+            <button  type="button" class="btn btn-danger" (click)="registerForm.reset(); close('registerCar')">{{labels.canceled}}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-register-confirm [car]="car"></app-register-confirm>

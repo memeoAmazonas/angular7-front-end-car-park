@@ -1,0 +1,24 @@
+<div class="row most-visited-container">
+  <h2>{{labels.title}}</h2>
+  <div class="table-responsive ">
+    <table class="table table-striped table-bordered">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">{{labels.position}}</th>
+        <th scope="col">{{labels.timeOccupated}}</th>
+        <th scope="col">{{labels.numberAccess}}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let car of carList; index as i">
+
+        <th scope="row" *ngIf="car.numberAccess> 0 ">{{i+1}}</th>
+        <td *ngIf="car.numberAccess> 0 ">{{car.id_table  + 1}}</td>
+        <td *ngIf="car.numberAccess> 0 ">{{car.time}}</td>
+        <td *ngIf="car.numberAccess> 0 ">{{car.numberAccess }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

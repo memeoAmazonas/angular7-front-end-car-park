@@ -1,0 +1,16 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit(idModal)" class="register-out-container">
+  <div class="form-group">
+    <label class="register-out-label">{{labels.exitCar}}</label>
+    <input type="text" formControlName="licencePlate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.licencePlate.errors }" [(placeholder)]= labels.placeholder />
+    <div *ngIf="submitted && f.licencePlate.errors" class="invalid-feedback">
+      <div *ngIf="f.licencePlate.errors.required">{{labels.licencePlate + labels.require}}</div>
+    </div>
+  </div>
+  <div>
+    <button [disabled]="(submitted && f.licencePlate.errors)" class="btn btn-primary register-out-btn">{{labels.find}}</button>
+  </div>
+</form>
+<app-car-modal [id]="idModal" [car]="car" [show]=false></app-car-modal>
+
+
+

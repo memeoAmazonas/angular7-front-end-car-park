@@ -1,0 +1,19 @@
+
+.carlist-container {
+  background: #e2eef7;
+  padding-top: 40px;
+}
+
+.carlist-title {
+  margin: 20px 0 20px 260px;
+  text-align: left;
+}
+
+.carlist-content {
+  margin-left:250px;
+}
+
+.carlist-content-content {
+  display: flex !important;
+  width: 145% !important;
+}

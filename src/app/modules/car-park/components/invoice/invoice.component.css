@@ -1,0 +1,7 @@
+.invoice-card-container {
+  border:0;
+  width:100%;
+}
+.invoice-card-body {
+  text-align: left;
+}
